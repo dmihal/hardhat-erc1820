@@ -5,7 +5,7 @@ Hardhat plugin to automatically deploy the ERC-1820 Registry contract.
 ## Installation
 
 ```bash
-yarn install hardhat-erc1820
+yarn add --dev hardhat-erc1820
 ```
 
 Import the plugin in your `hardhat.config.js`:
