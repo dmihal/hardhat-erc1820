@@ -1,5 +1,5 @@
 import { subtask } from "hardhat/config";
-import { TASK_NODE_GET_PROVIDER, TASK_TEST_SETUP_TEST_ENVIRONMENT } from 'hardhat/builtin-tasks/task-names';
+import { TASK_TEST_SETUP_TEST_ENVIRONMENT,TASK_COMPILE } from 'hardhat/builtin-tasks/task-names';
 import { EthereumProvider } from 'hardhat/types';
 
 const ERC1820_ADDRESS = '0x1820a4b7618bde71dce8cdc73aab6c95905fad24';
@@ -23,7 +23,7 @@ async function ensureERC1820(provider: EthereumProvider): Promise<void> {
   }
 }
 
-subtask(TASK_NODE_GET_PROVIDER).setAction(
+subtask(TASK_COMPILE).setAction(
   async (args: any, hre: any, runSuper: any): Promise<EthereumProvider> => {
     const provider = await runSuper(args);
     await ensureERC1820(provider);
